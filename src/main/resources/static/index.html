@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111214">
+  <meta name="description" content="Find your next favorite film. Browse showtimes, choose your seats, and book your night at The Screening Room.">
+  <title>The Screening Room — Find your next favorite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <div class="topline"><span>THE SCREENING ROOM</span><span>YOUR SEAT. YOUR STORY.</span></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="The Screening Room home"><span class="brand-mark">S<span>·</span>R</span><span class="brand-name">THE SCREENING ROOM</span></a>
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="nav-current" href="#now-showing">Now showing</a>
+      <a href="#about">Our cinema</a>
+    </nav>
+    <button class="manage-button" id="manage-booking" type="button"><span aria-hidden="true">↗</span> Find my booking</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="live-dot"></span> A little escape, right this way</p>
+        <h1>Make a night<br>of <em>something.</em></h1>
+        <p class="hero-description">Big stories. Comfy seats. The lights go down, the rest can wait.</p>
+        <a class="hero-link" href="#now-showing">Find your film <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-caption"><span>THE MAGIC STARTS HERE</span><span>EST. 2026 · YOUR NEIGHBOURHOOD CINEMA</span></div>
+      <div class="hero-number" aria-hidden="true">01</div>
+    </section>
+
+    <section class="now-showing" id="now-showing">
+      <div class="section-top">
+        <div><p class="eyebrow">Your next favourite is on</p><h2>Now <em>showing</em></h2></div>
+        <p class="section-note">A good film is even better<br>with nowhere else to be.</p>
+      </div>
+      <div class="date-bar">
+        <span class="date-label">PICK A DAY</span>
+        <div class="date-options" id="date-options" aria-label="Choose a show date"></div>
+      </div>
+      <p class="page-status" id="page-status" role="status"></p>
+      <div class="movie-grid" id="movie-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="cinema-note" id="about">
+      <span class="note-star" aria-hidden="true">✳</span>
+      <div><p class="eyebrow">A good place to press pause</p><h2>Less scrolling.<br><em>More feeling.</em></h2></div>
+      <p>Come for the stories. Stay for the velvet seats, the opening credits, and that rare feeling of being exactly where you should be.</p>
+      <span class="note-address">THE SCREENING ROOM<br>OPEN EVERY DAY · DOORS AT 12</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#"><span class="brand-mark">S<span>·</span>R</span><span class="brand-name">THE SCREENING ROOM</span></a>
+    <p>Good films. Good company. No rush.</p>
+    <span>© 2026 THE SCREENING ROOM</span>
+  </footer>
+
+  <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close dialog">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <dialog class="booking-dialog manage-dialog" id="manage-dialog" aria-labelledby="manage-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close dialog">×</button>
+    <p class="eyebrow">Your plans, right here</p>
+    <h2 id="manage-title">Find your <em>booking.</em></h2>
+    <form id="find-booking-form" class="details-form">
+      <label>Booking reference<input name="reference" required maxlength="16" autocomplete="off" placeholder="e.g. A1B2C3D4E5F6"></label>
+      <label>Email used to book<input name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com"></label>
+      <p class="form-error" id="manage-error" role="alert"></p>
+      <button class="primary-button" type="submit">Find my booking <span aria-hidden="true">→</span></button>
+    </form>
+    <div id="manage-result"></div>
+  </dialog>
+</body>
+</html>
